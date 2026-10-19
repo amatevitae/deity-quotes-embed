@@ -1,1 +1,166 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>words of wisdom</title><style>*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000000;color:#f3eaf5}body{font-family:Georgia,serif}.widget{padding:19px 22px 16px;min-height:210px;display:flex;flex-direction:column;gap:14px}.heading{color:#ffffff;font:600 14px system-ui,sans-serif;letter-spacing:.04em;display:flex;justify-content:space-between}.quote{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-style:italic;font-size:clamp(17px,3.5vw,23px);line-height:1.5}.footer{display:flex;justify-content:space-between;align-items:center;gap:10px}.note{color:#aaaaaa;font:11px system-ui,sans-serif}button{background:transparent;color:#ffffff;border:1px solid #777777;border-radius:8px;padding:8px 12px;cursor:pointer;font:12px system-ui,sans-serif}button:hover{background:#222222}</style></head><body><section class="widget"><div class="heading"><span>✧ words of wisdom ✧</span><span>☾</span></div><div class="quote" id="quote" aria-live="polite"></div><div class="footer"><span class="note">a little reflection for today</span><button id="shuffle" type="button">⤨ new quote</button></div></section><script>const quotes=["growth does not require perfection.","you are allowed to begin again as often as you need.","the smallest act of kindness can change a day.","rest is a worthy part of progress.","your boundaries deserve to be respected.","there is wisdom in knowing when to wait.","be curious about what you have yet to learn.","change can be difficult and still be worthwhile.","give yourself room to become someone new.","you can honour the past while choosing a different future.","patience is a practice, not a personality trait.","not every question needs an answer today.","notice what brings you peace, and make room for it.","courage can be quiet.","you are allowed to celebrate small victories.","care for what matters to you.","listen carefully, including to yourself.","your time and attention are valuable.","take pride in the effort you make.","there is always more to discover."];let last=-1;function shuffle(){let i;do{i=Math.floor(Math.random()*quotes.length)}while(quotes.length>1&&i===last);last=i;document.getElementById('quote').textContent='“'+quotes[i]+'”'}document.getElementById('shuffle').addEventListener('click',shuffle);shuffle()</script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>deity message</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.widget {
+  min-height: 220px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message-type {
+  color: #aaaaaa;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.message {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(16px, 3vw, 21px);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.subtitle {
+  color: #aaaaaa;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+button {
+  background: transparent;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #222222;
+}
+</style>
+</head>
+
+<body>
+
+<div class="widget">
+
+  <div class="heading">
+    <span>✧ deity message ✧</span>
+    <span>☾</span>
+  </div>
+
+  <div class="message-type" id="type"></div>
+
+  <div class="message" id="message" aria-live="polite"></div>
+
+  <div class="footer">
+    <span class="subtitle">a message for this moment</span>
+    <button id="shuffle">⤨ new message</button>
+  </div>
+
+</div>
+
+<script>
+const messages = [
+  { type: "message", text: "pay attention to what keeps repeating." },
+  { type: "message", text: "there is something important in what you have been avoiding." },
+  { type: "message", text: "you already know what deserves your attention." },
+  { type: "message", text: "make space for what matters to you." },
+
+  { type: "guidance", text: "slow down and listen before acting." },
+  { type: "guidance", text: "focus on your boundaries." },
+  { type: "guidance", text: "choose your next step with intention." },
+  { type: "guidance", text: "take time to understand what you are feeling." },
+
+  { type: "request", text: "clean and refresh my space." },
+  { type: "request", text: "spend some quiet time with me." },
+  { type: "request", text: "write me a letter." },
+  { type: "request", text: "make time for our connection today." },
+
+  { type: "offering", text: "offer a candle or a moment of candlelight." },
+  { type: "offering", text: "dedicate a cup of tea or water to me." },
+  { type: "offering", text: "create something with your hands." },
+  { type: "offering", text: "offer a poem, song, or piece of art." },
+
+  { type: "prophecy", text: "something hidden may soon become clearer." },
+  { type: "prophecy", text: "a change of direction may bring new opportunities." },
+  { type: "prophecy", text: "an unfinished matter may return for your attention." },
+  { type: "prophecy", text: "something you have been waiting for may begin to move." },
+
+  { type: "reminder", text: "rest is part of your practice." },
+  { type: "reminder", text: "your boundaries deserve respect." },
+  { type: "reminder", text: "small acts of devotion are meaningful." },
+  { type: "reminder", text: "you are allowed to begin again." },
+
+  { type: "devotional prompt", text: "write a prayer tonight." },
+  { type: "devotional prompt", text: "pull a tarot card and reflect on its meaning." },
+  { type: "devotional prompt", text: "spend ten minutes in meditation." },
+  { type: "devotional prompt", text: "write down three things you are grateful for." }
+];
+
+let last = -1;
+
+function shuffle() {
+  let index;
+
+  do {
+    index = Math.floor(Math.random() * messages.length);
+  } while (messages.length > 1 && index === last);
+
+  last = index;
+
+  document.getElementById("type").textContent = messages[index].type;
+  document.getElementById("message").textContent = "“" + messages[index].text + "”";
+}
+
+document.getElementById("shuffle").addEventListener("click", shuffle);
+
+shuffle();
+</script>
+
+</body>
+</html>
